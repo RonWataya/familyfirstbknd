@@ -1,8 +1,8 @@
 require('dotenv').config();
-const HOST = 'tests.cnm0ouk4axh4.us-east-1.rds.amazonaws.com';
+const HOST = 'localhost';
 const USER = 'admin';
-const PASSWORD = 'wataya1993';
-const DB = 'family_first_matchmaking';
+const PASSWORD = 'familyfirst@2025';
+const DB = 'familyfirstdb';
 const PORTAWS = '3306';
 
 module.exports = {
@@ -10,7 +10,7 @@ module.exports = {
     USER: USER,
     PASSWORD: PASSWORD,
     DB: DB,
-    PORTAWS: PORTAWS
+   // PORTAWS: PORTAWS
         //  PORTAWS: PORTAWS
 };
 

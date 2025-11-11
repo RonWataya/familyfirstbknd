@@ -25,10 +25,10 @@ app.use(registration);
 app.use(admin);
 
 
-// HTTPS Options - Replace with OmniPOS cert path
+// HTTPS Options - Replace with FF cert path
 const options = {
-    key: fs.readFileSync('/etc/letsencrypt/live/miwalletmw.com/privkey.pem'),
-    cert: fs.readFileSync('/etc/letsencrypt/live/miwalletmw.com/fullchain.pem'),
+    key: fs.readFileSync('/etc/letsencrypt/live/familyfirstmatchmaking.com/privkey.pem'),
+    cert: fs.readFileSync('/etc/letsencrypt/live/familyfirstmatchmaking.com/fullchain.pem'),
 };
 
 // FIX 1: Changed default port to 7000 to match the client's fetch URL in app.js.
