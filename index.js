@@ -2,8 +2,8 @@ const express = require("express");
 const cors = require("cors");
 require('dotenv').config();
 
-const registration = require('./routes/registration');
-const admin = require('./routes/admin');
+app.use('/api', registration); // All routes in registration.js will now start with /api
+app.use('/api', admin);        // All routes in admin.js will now start with /api
 
 const app = express();
 
