@@ -18,14 +18,15 @@ app.use(cors({ origin: '*' }));
 app.use(registration);
 app.use(admin);
 
-// PORT for Node.js app (internal only)
-const PORT = process.env.PORT || 7000;
+
 
 // ✅ Node.js should run ONLY HTTP, because Apache handles HTTPS
-app.listen(PORT, () => {
-    console.log(`HTTP Server running on port ${PORT}`);
-});
+const HOST = '127.0.0.1'; // Ensure this is set
+const PORT = process.env.PORT || 7000;
 
+app.listen(PORT, HOST, () => { // Include HOST here
+    console.log(`HTTP Server running on http://${HOST}:${PORT}`);
+});
 // Error Handling
 process.on('uncaughtException', (error) => {
     console.error('Uncaught exception:', error);
