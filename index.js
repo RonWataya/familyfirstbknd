@@ -17,8 +17,8 @@ app.use('/api', registration);
 app.use('/api', admin);
 //app.use('/api', login);
 
-//const HOST = '127.0.0.1';
-const HOST = 'localhost';
+const HOST = '127.0.0.1';
+//const HOST = 'localhost';
 const PORT = process.env.PORT || 7000;
 
 app.listen(PORT, HOST, () => {

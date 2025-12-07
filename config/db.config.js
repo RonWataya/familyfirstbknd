@@ -1,7 +1,7 @@
 require('dotenv').config();
 const HOST = 'localhost';
-const USER = 'root';
-const PASSWORD = '';
+const USER = 'admin';
+const PASSWORD = 'familyfirst@2025';
 const DB = 'familyfirstdb';
 const PORTAWS = '3306';
 
