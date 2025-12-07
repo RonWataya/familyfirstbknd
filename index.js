@@ -4,30 +4,29 @@ require('dotenv').config();
 
 const registration = require('./routes/registration');
 const admin = require('./routes/admin');
+//const login = require('./routes/login');
 
 const app = express();
 
-// Middleware
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 app.use('/uploads', express.static('public/uploads'));
-
 app.use(cors({ origin: '*' }));
 
-// Routes
-app.use('/api', registration); // All routes in registration.js will now start with /api
-app.use('/api', admin);        // All routes in admin.js will now start with /api
+app.use('/api', registration);
+app.use('/api', admin);
+//app.use('/api', login);
 
-
-
-// ✅ Node.js should run ONLY HTTP, because Apache handles HTTPS
-const HOST = '127.0.0.1'; // Ensure this is set
+//const HOST = '127.0.0.1';
+const HOST = 'localhost';
 const PORT = process.env.PORT || 7000;
 
-app.listen(PORT, HOST, () => { // Include HOST here
+app.listen(PORT, HOST, () => {
     console.log(`HTTP Server running on http://${HOST}:${PORT}`);
 });
-// Error Handling
+
+app.use((req, res) => res.status(404).send('Not Found'));
+
 process.on('uncaughtException', (error) => {
     console.error('Uncaught exception:', error);
 });

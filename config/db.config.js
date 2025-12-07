@@ -1,5 +1,22 @@
 require('dotenv').config();
 const HOST = 'localhost';
+const USER = 'root';
+const PASSWORD = '';
+const DB = 'familyfirstdb';
+const PORTAWS = '3306';
+
+module.exports = {
+    HOST: HOST,
+    USER: USER,
+    PASSWORD: PASSWORD,
+    DB: DB,
+   // PORTAWS: PORTAWS
+        //  PORTAWS: PORTAWS
+};
+
+/*
+require('dotenv').config();
+const HOST = 'localhost';
 const USER = 'admin';
 const PASSWORD = 'familyfirst@2025';
 const DB = 'familyfirstdb';
@@ -14,7 +31,7 @@ module.exports = {
         //  PORTAWS: PORTAWS
 };
 
-/*const HOST = 'tests.cnm0ouk4axh4.us-east-1.rds.amazonaws.com';
+const HOST = 'tests.cnm0ouk4axh4.us-east-1.rds.amazonaws.com';
 const USER = 'admin';
 const PASSWORD = 'wataya1993';
 const DB = 'omnipos';
