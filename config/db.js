@@ -7,14 +7,14 @@ const dbConfig = require("./db.config.js");
 
 // Create a connection pool
 const pool = mysql.createPool({
-    connectionLimit: 1000,
-    host: dbConfig.HOST,
-    user: dbConfig.USER,
-    password: dbConfig.PASSWORD,
-    database: dbConfig.DB,
-    port: dbConfig.PORTAWS,
-    waitForConnections: true,
-    queueLimit: 0
+ connectionLimit: 1000,
+ host: dbConfig.HOST,
+ user: dbConfig.USER,
+ password: dbConfig.PASSWORD,
+ database: dbConfig.DB,
+ port: dbConfig.PORTAWS,
+ waitForConnections: true,
+ queueLimit: 0
 });
 
 // 2. CRITICAL CHANGE: Use async/await to test the connection (no callback)
