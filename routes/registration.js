@@ -37,12 +37,23 @@ const PSYCHO_KEYS = [
     'psycho_stress', 'psycho_discouraged', 'psycho_funny', 'psycho_outgoing'
 ];
 
+// ✅ ADDED: agree/disagree → numeric scale
+const PSYCHO_SCALE_MAP = {
+    "Strongly Disagree": 1,
+    "Disagree": 2,
+    "Slightly Disagree": 3,
+    "Neither Agree nor Disagree": 4,
+    "Slightly Agree": 5,
+    "Agree": 6,
+    "Strongly Agree": 7
+};
+
 router.post("/register", async (req, res) => {
     let connection;
 
     try {
         const incoming_data = req.body;
-         // 🔍 DEBUG LOG — Shows exactly what the frontend sent
+        // 🔍 DEBUG LOG — Shows exactly what the frontend sent
         console.log("🚀 Incoming Registration Data:", JSON.stringify(incoming_data, null, 2));
 
         if (!incoming_data.email || !incoming_data.password) {
@@ -146,11 +157,13 @@ router.post("/register", async (req, res) => {
             }
         }
 
-        // --- D. PSYCHOMETRIC ---
+        // --- D. PSYCHOMETRIC (FIXED) ---
         const psychoSql = `INSERT INTO user_psychometric_responses (user_id, question_key, score) VALUES (?, ?, ?)`;
         for (const key of PSYCHO_KEYS) {
-            const val = parseInt(incoming_data[key]);
-            if (!isNaN(val)) {
+            const raw = incoming_data[key];
+            const val = PSYCHO_SCALE_MAP[raw];
+
+            if (val !== undefined) {
                 await connection.execute(psychoSql, [userId, key, val]);
             }
         }
