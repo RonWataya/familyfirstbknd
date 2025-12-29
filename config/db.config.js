@@ -1,5 +1,5 @@
 require('dotenv').config();
-const HOST = 'miwalletmw.com';
+const HOST = '127.0.0.1';
 const USER = 'miwallet_admin';
 const PASSWORD = 'admin@_2025';
 const DB = 'familyfirstdb';
