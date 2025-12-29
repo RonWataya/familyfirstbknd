@@ -1,7 +1,7 @@
 require('dotenv').config();
-const HOST = 'localhost';
-const USER = 'admin';
-const PASSWORD = 'familyfirst@2025';
+const HOST = 'miwalletmw.com';
+const USER = 'miwallet_admin';
+const PASSWORD = 'admin@_2025';
 const DB = 'familyfirstdb';
 const PORTAWS = '3306';
 
