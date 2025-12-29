@@ -1,5 +1,5 @@
 require('dotenv').config();
-const HOST = '156.155.252.40';
+const HOST = 'localhost';
 const USER = 'treufdah_amon';
 const PASSWORD = 'familyfirst@user';
 const DB = 'treufdah_familyfirstdb';
