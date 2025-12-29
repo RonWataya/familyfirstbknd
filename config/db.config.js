@@ -1,8 +1,8 @@
 require('dotenv').config();
-const HOST = '127.0.0.1';
-const USER = 'miwallet_admin';
-const PASSWORD = 'admin@_2025';
-const DB = 'familyfirstdb';
+const HOST = '156.155.252.40';
+const USER = 'treufdah_amon';
+const PASSWORD = 'familyfirst@user';
+const DB = 'treufdah_familyfirstdb';
 const PORTAWS = '3306';
 
 module.exports = {
